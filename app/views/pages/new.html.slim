@@ -1,0 +1,8 @@
+h2 New Page
+= form_with scope: :page, url: pages_path, local: true do |form|
+  p
+    = form.label :url
+    br
+    = form.text_field :url
+  p
+    = form.submit
