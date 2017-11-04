@@ -1,6 +1,6 @@
 class CreateAnalyses < ActiveRecord::Migration[5.1]
   def change
-    create_table :analysis do |t|
+    create_table :analyses do |t|
       t.string :title
       t.string :url
       t.text :content
