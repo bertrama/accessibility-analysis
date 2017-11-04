@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101231442) do
+ActiveRecord::Schema.define(version: 20171104144221) do
+
+  create_table "analysis", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.text "content"
+    t.integer "pages_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pages_id"], name: "index_analysis_on_pages_id"
+  end
 
   create_table "pages", force: :cascade do |t|
     t.string "url"
