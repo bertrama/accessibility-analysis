@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104154327) do
+ActiveRecord::Schema.define(version: 20171104155445) do
 
   create_table "analysis", force: :cascade do |t|
     t.string "title"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20171104154327) do
     t.integer "analysis_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "fingerprint"
     t.index ["analysis_id"], name: "index_messages_on_analysis_id"
   end
 
