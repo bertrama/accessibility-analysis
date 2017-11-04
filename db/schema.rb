@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104152014) do
+ActiveRecord::Schema.define(version: 20171104154327) do
 
   create_table "analysis", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 20171104152014) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pages_id"], name: "index_analysis_on_pages_id"
+  end
+
+  create_table "elements", force: :cascade do |t|
+    t.string "visibility"
+    t.string "display"
+    t.string "tag"
+    t.string "path"
+    t.text "html"
+    t.integer "top"
+    t.integer "left"
+    t.integer "bottom"
+    t.integer "right"
+    t.integer "x"
+    t.integer "y"
+    t.integer "width"
+    t.integer "height"
+    t.integer "messages_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["messages_id"], name: "index_elements_on_messages_id"
   end
 
   create_table "messages", force: :cascade do |t|
