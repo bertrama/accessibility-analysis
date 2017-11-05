@@ -4,7 +4,7 @@ class CreateAnalyses < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :url
       t.text :content
-      t.belongs_to :pages, index: true
+      t.belongs_to :page, index: true
 
       t.timestamps
     end

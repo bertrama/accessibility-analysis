@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 20171104160851) do
     t.string "title"
     t.string "url"
     t.text "content"
-    t.integer "pages_id"
+    t.integer "page_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "screenshot_file_name"
     t.string "screenshot_content_type"
     t.integer "screenshot_file_size"
     t.datetime "screenshot_updated_at"
-    t.index ["pages_id"], name: "index_analyses_on_pages_id"
+    t.index ["page_id"], name: "index_analyses_on_page_id"
   end
 
   create_table "elements", force: :cascade do |t|
@@ -40,21 +40,21 @@ ActiveRecord::Schema.define(version: 20171104160851) do
     t.integer "y"
     t.integer "width"
     t.integer "height"
-    t.integer "messages_id"
+    t.integer "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["messages_id"], name: "index_elements_on_messages_id"
+    t.index ["message_id"], name: "index_elements_on_message_id"
   end
 
   create_table "messages", force: :cascade do |t|
     t.string "identifier"
-    t.string "type"
+    t.string "severity"
     t.text "description"
-    t.integer "analyses_id"
+    t.integer "analysis_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fingerprint"
-    t.index ["analyses_id"], name: "index_messages_on_analyses_id"
+    t.index ["analysis_id"], name: "index_messages_on_analysis_id"
   end
 
   create_table "pages", force: :cascade do |t|

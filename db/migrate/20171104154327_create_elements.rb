@@ -14,7 +14,7 @@ class CreateElements < ActiveRecord::Migration[5.1]
       t.integer :y
       t.integer :width
       t.integer :height
-      t.belongs_to :messages
+      t.belongs_to :message
 
       t.timestamps
     end
