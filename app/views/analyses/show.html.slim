@@ -1,0 +1,39 @@
+div.row
+  section.col-sm-8
+    dt Title
+    dd = @analysis.title
+    dt Url
+    dd = @analysis.url
+  section.col-sm-4
+    button.btn.btn-secondary = "Not Shown (#{@analysis.message_count(:all) - @analysis.message_count(:shown)})"
+    button.btn.btn-secondary = "Shown (#{@analysis.message_count(:shown)})"
+    button.btn.btn-danger = "Error (#{@analysis.message_count(:error)})"
+    button.btn.btn-warning = "Warning (#{@analysis.message_count(:warning)})"
+    button.btn.btn-info = "Info (#{@analysis.message_count(:info)})"
+
+
+div.row
+  section.col-sm-8
+    h2 Screenshot
+    img src=@analysis.screenshot alt="Screen capture of #{@analysis.title}"
+
+  section.col-sm-4
+    h2 Messages
+    ul.message-list
+      - @analysis.each_message do |message|
+        li
+          - if message.shown?
+            button class="btn btn-#{message.severity_class} float-right" data-id=message.id Highlight
+          - else
+            button.btn.btn-secondary.float-right disabled="disabled" Not shown
+          dl
+            dt Severity
+            dd = message.severity_string
+            dt Identifier
+            dd = message.identifier
+            dt Description
+            dd = message.description
+            dt Tag
+            dd = message.tag
+            dt Path
+            dd = message.path

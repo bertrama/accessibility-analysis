@@ -26,6 +26,10 @@ class PagesController < ApplicationController
     redirect_to @page
   end
 
+  def analyses
+    @page = page_id
+  end
+
   private
   def page_params
     params.require(:page).permit(:url)

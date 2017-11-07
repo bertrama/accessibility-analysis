@@ -1,0 +1,15 @@
+doctype html
+html lang="en"
+  head
+    title Accessibility Analysis
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, intial-scale=1 shrink-to-fit=no"
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    main.container role="main"
+      section
+        h1 Accessibility Analysis
+      == yield

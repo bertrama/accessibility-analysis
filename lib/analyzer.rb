@@ -68,7 +68,8 @@ class Analyzer
           var style = getComputedStyle(i.element);
           var rectangle = i.element.getBoundingClientRect();
           i.element = {
-            visibility: style.getPropertyValue('visible'),
+            tag: i.element.tagName,
+            visibility: style.getPropertyValue('visibility'),
             display: style.getPropertyValue('display'),
             path: fullPath(i.element),
             x: rectangle.x,

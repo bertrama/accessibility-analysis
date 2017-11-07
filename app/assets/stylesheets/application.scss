@@ -12,3 +12,16 @@
  *
  */
 @import "bootstrap";
+
+img {
+  max-width: 100%;
+}
+
+.message-list {
+  list-style:none;
+  padding-left: 0;
+}
+
+.message-list li {
+  margin-bottom: 2rem;
+}
