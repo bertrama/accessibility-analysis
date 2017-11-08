@@ -13,6 +13,10 @@ class MessagePresenter
     message.severity
   end
 
+  def roles
+    "severity-#{severity_string.downcase} #{shown? ? 'shown' : 'not-shown'}"
+  end
+
   def severity_string
     [ "", "Error", "Warning", "Info" ][severity.to_i]
   end
