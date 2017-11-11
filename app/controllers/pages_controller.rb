@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @pages = Page.all
+    @pages = Page.all.map { |p| PagePresenter.new(p)}
   end
 
   def new
@@ -26,16 +26,12 @@ class PagesController < ApplicationController
     redirect_to @page
   end
 
-  def analyses
-    @page = page_id
-  end
-
   private
   def page_params
     params.require(:page).permit(:url)
   end
 
   def page_id
-    Page.find(params[:id])
+    PagePresenter.new(Page.find(params[:id]))
   end
 end

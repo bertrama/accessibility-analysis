@@ -12,6 +12,8 @@ html lang="en"
     main.container role="main"
       section.starter-template
         h1 Accessibility Analysis
-        p Intro paragraph
+        p
+          = link_to("List pages", {controller: :pages, action: :index}, class: 'btn btn-info')
+          = link_to("Create new page", {controller: :pages, action: :new}, class: 'btn btn-success')
       section.starter-template
         == yield

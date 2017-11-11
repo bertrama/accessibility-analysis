@@ -15,11 +15,15 @@
 }
 
 .message {
-  margin-top: 1rem;
   background-color: white;
   padding: 2rem;
 }
 
 code {
-  word-wrap: break-word;
+  white-space: pre-wrap;
+  display: block;
+}
+
+.pointer {
+  background-image: asset_data_url("arrow.svg")
 }

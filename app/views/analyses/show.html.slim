@@ -1,21 +1,33 @@
 div.row
   section.col-sm-8
-    dt Title
-    dd = @analysis.title
-    dt Url
-    dd = @analysis.url
+    h2 Analysis Metadata
+    dl
+      dt Page
+      dd = link_to(@analysis.page_label, @analysis.page)
+      dt Title
+      dd = @analysis.title
+      dt Url
+      dd = @analysis.url
+      dt Date
+      dd = @analysis.created
   section.col-sm-4
-    button.btn.btn-secondary.active type="button" data-toggle=".not-shown" aria-pressed="true" autocomplete="off" = "Not Shown (#{@analysis.message_count(:all) - @analysis.message_count(:shown)})"
-    button.btn.btn-secondary.active type="button" data-toggle=".shown" aria-pressed="true" autocomplete="off" = "Shown (#{@analysis.message_count(:shown)})"
-    button.btn.btn-danger.active type="button" data-toggle=".severity-error" aria-pressed="true" autocomplete="off" = "Error (#{@analysis.message_count(:error)})"
-    button.btn.btn-warning.active type="button" data-toggle=".severity-warning" aria-pressed="true" autocomplete="off" = "Warning (#{@analysis.message_count(:warning)})"
-    button.btn.btn-info.active type="button" data-toggle=".severity-info" aria-pressed="true" autocomplete="off" = "Info (#{@analysis.message_count(:info)})"
+    h2 Message Filters
+    .visibility
+      button.btn.btn-secondary.active type="button" data-toggle=".not-shown" aria-pressed="true" autocomplete="off" = "Not Shown (#{@analysis.message_count(:all) - @analysis.message_count(:shown)})"
+      button.btn.btn-secondary.active type="button" data-toggle=".shown" aria-pressed="true" autocomplete="off" = "Shown (#{@analysis.message_count(:shown)})"
+    .severity
+      button.btn.btn-danger.active type="button" data-toggle=".severity-error" aria-pressed="true" autocomplete="off" = "Error (#{@analysis.message_count(:error)})"
+      button.btn.btn-warning.active type="button" data-toggle=".severity-warning" aria-pressed="true" autocomplete="off" = "Warning (#{@analysis.message_count(:warning)})"
+      button.btn.btn-info.active type="button" data-toggle=".severity-info" aria-pressed="true" autocomplete="off" = "Info (#{@analysis.message_count(:info)})"
 
 div.row
   section.col-sm-8
     h2 Screenshot
     #highlight
-    img src=@analysis.screenshot alt="Screen capture of #{@analysis.title}"
+    - if @analysis.screenshot?
+      img src=@analysis.screenshot alt="Screen capture of #{@analysis.title}"
+    - else
+      p No image available
 
   section.col-sm-4
     h2 Messages
@@ -23,16 +35,20 @@ div.row
       - @analysis.each_message do |message|
         li class=message.roles
           - if message.shown?
-            button class="btn btn-#{message.severity_class} float-right" data-id=message.id Highlight
+            button class="btn btn-#{message.severity_class} float-right" tabindex="0" data-id=message.id Highlight
           - else
             button.btn.btn-secondary.float-right disabled="disabled" Not shown
           dl
             dt Severity
             dd = message.severity_string
-            dt Identifier
-            dd = message.identifier
+            dt Success Criteria
+            - message.success_criteria do |criteria|
+              dd = link_to(criteria.label, criteria.url, target: '_blank')
             dt Description
             dd = message.description
+            dt Techniques
+            - message.each_technique do |technique|
+              dd = link_to(technique.label, technique.url, target: '_blank')
             dt Tag
             dd = message.tag
             dt Path

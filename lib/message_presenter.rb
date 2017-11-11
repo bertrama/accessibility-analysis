@@ -29,6 +29,33 @@ class MessagePresenter
     message.identifier
   end
 
+  def success_criteria
+    return unless identifier
+    standard, _, _, criteria, *_ = identifier.split(/\./)
+    criteria = criteria.gsub(/_\D.*/, '')
+    url = case standard
+    when 'WCAG2AA'
+      'http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/' + criteria
+    end
+    yield OpenStruct.new(label: "Success Criteria: " + criteria, url: url )
+  end
+
+  def each_technique
+    techniques.each do |technique|
+      yield technique
+    end
+  end
+
+  def techniques
+    return [] unless identifier
+    standard, _, _, _, techniques, *_ = identifier.split(/\./)
+    base_url = case standard
+      when 'WCAG2AA'
+        'http://www.w3.org/TR/WCAG20-TECHS/'
+    end
+    techniques.split(',').map { |tech| OpenStruct.new(label: "Technique " + tech, url: base_url + tech) }
+  end
+
   def description
     message.description
   end
@@ -41,16 +68,28 @@ class MessagePresenter
     element.path
   end
 
+  def pretty_code
+    Nokogiri::XML(code,&:noblanks).to_xhtml(indent: 2).gsub(/src="data:image[^"]*"/, 'src="[inlined image]"')
+  end
+
   def code
     element.html
   end
 
-  def css_dimensions
+  def outline_style
     "margin-top: #{element.top}px; margin-left: #{element.left}px; width: #{element.width}px; height: #{element.height}px;"
   end
 
+  def pointer_style
+    "margin-left: #{element.left}px; width: #{element.width}px; height: 1rem;"
+  end
+
   def shown?
-    element.width > 0 &&
+    element.width &&
+      element.height &&
+      element.visibility &&
+      element.display &&
+      element.width > 0 &&
       element.height > 0 &&
       element.visibility != 'hidden' &&
       element.display != 'none'

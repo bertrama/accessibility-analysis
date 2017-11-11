@@ -1,3 +1,24 @@
 dl
   dt Url
   dd = @page.url
+ul
+  - @page.each_analysis do |analysis|
+    li
+      header
+        h3 = link_to(analysis.label, analysis)
+      dl
+        dt Date
+        dd = analysis.date
+        - if analysis.title
+          dt Title
+          dd = analysis.title
+        - if analysis.url
+          dt Url
+          dd = analysis.url
+        - if analysis.messages?
+          dt Messages
+          dd = analysis.message_count
+        - if analysis.screenshot?
+          dt Screenshot
+          dd
+            img.preview src=analysis.screenshot alt="Screenshot of #{analysis.title}"

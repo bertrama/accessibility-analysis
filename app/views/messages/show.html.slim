@@ -1,7 +1,15 @@
-div class="outline highlight-#{@message.severity_class}" style=@message.css_dimensions
+div class="outline highlight-#{@message.severity_class}" style=@message.outline_style
+div.pointer style=@message.pointer_style
 div class="message highlight-#{@message.severity_class}"
-  button#close.btn.btn-danger.float-right Close
+  button#close.btn.btn-danger.float-right tabindex="0" Close
+  h3 Description
   p.clearfix
     = @message.description
+  ul
+    - @message.success_criteria do |criteria|
+      li = link_to(criteria.label, criteria.url, target: '_blank' )
+    - @message.each_technique do |technique|
+      li = link_to(technique.label, technique.url, target: '_blank')
+  h3 Code (the code may have been reformatted)
   code
-    = @message.code
+    = @message.pretty_code
