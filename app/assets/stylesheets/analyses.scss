@@ -1,0 +1,25 @@
+#highlight {
+  position: absolute;
+}
+
+.highlight-error, .highlight-danger {
+  border: 2px solid red;
+}
+
+.highlight-warning {
+  border: 3px solid yellow;
+}
+
+.highlight-info {
+  border: 3px solid lightblue;
+}
+
+.message {
+  margin-top: 1rem;
+  background-color: white;
+  padding: 2rem;
+}
+
+code {
+  word-wrap: break-word;
+}

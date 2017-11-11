@@ -34,18 +34,26 @@ class MessagePresenter
   end
 
   def tag
-    message.element.tag
+    element.tag
   end
 
   def path
-    message.element.path
+    element.path
+  end
+
+  def code
+    element.html
+  end
+
+  def css_dimensions
+    "margin-top: #{element.top}px; margin-left: #{element.left}px; width: #{element.width}px; height: #{element.height}px;"
   end
 
   def shown?
-    message.element.width > 0 &&
-      message.element.height > 0 &&
-      message.element.visibility != 'hidden' &&
-      message.element.display != 'none'
+    element.width > 0 &&
+      element.height > 0 &&
+      element.visibility != 'hidden' &&
+      element.display != 'none'
   end
 
   def error?
@@ -58,5 +66,10 @@ class MessagePresenter
 
   def info?
     message.severity == "3"
+  end
+
+  private
+  def element
+    message.element
   end
 end

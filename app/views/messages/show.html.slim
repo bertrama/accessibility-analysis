@@ -1,0 +1,7 @@
+div class="outline highlight-#{@message.severity_class}" style=@message.css_dimensions
+div class="message highlight-#{@message.severity_class}"
+  button#close.btn.btn-danger.float-right Close
+  p.clearfix
+    = @message.description
+  code
+    = @message.code
