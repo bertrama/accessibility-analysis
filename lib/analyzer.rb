@@ -99,7 +99,26 @@ class Analyzer
   end
 
   def get_body_size(driver)
-    rectangle = driver.execute_script("return document.body.getClientRects();").first
+    rectangle = driver.execute_script("
+    var retval = document.body.getBoundingClientRect();
+    retval.x = retval.left = 0;
+    retval.y = retval.top = 0;
+
+    Object.values(document.getElementsByTagName('*')).forEach(
+      function (e) {
+        if (e.getBoundingClientRect) {
+          var rect = e.getBoundingClientRect();
+          if (rect.x + rect.width > retval.width) {
+            retval.right = Math.ceil(retval.width = rect.x + rect.width);
+          }
+          if (rect.y + rect.height > retval.height) {
+            retval.bottom = Math.ceil(retval.height = rect.y + rect.height);
+          }
+        }
+      }
+    );
+    return retval;
+    ")
     [rectangle['width'].to_f.ceil, rectangle['height'].to_f.ceil]
   end
 
