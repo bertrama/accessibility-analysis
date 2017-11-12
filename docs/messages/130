@@ -1,0 +1,8 @@
+<div class="outline highlight-warning" style="margin-top: 0px; margin-left: 636px; width: 363px; height: 21px;"></div><div class="pointer" style="margin-left: 636px; width: 363px; height: 1rem;"></div><div class="message highlight-warning"><button class="btn btn-danger float-right" id="close" tabindex="0">Close</button><h3>Description</h3><p class="clearfix">If this element contains a navigation section, it is recommended that it be marked up as a list.</p><ul><li><a target="_blank" href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/1_3_1">Success Criteria: 1_3_1</a></li><li><a target="_blank" href="http://www.w3.org/TR/WCAG20-TECHS/H48">Technique H48</a></li></ul><h3>Code (the code may have been reformatted)</h3><code>&lt;div id=&quot;block-system-user-menu&quot; class=&quot;block block-system block-menu first odd&quot; role=&quot;navigation&quot;&gt;
+  &lt;h2 class=&quot;block-title&quot;&gt;User menu&lt;/h2&gt;
+  &lt;a href=&quot;//www.lib.umich.edu/accessibility&quot; title=&quot;&quot; class=&quot;first leaf&quot;&gt;Accessibility&lt;/a&gt;
+  &lt;a href=&quot;/my-account/checkouts&quot; title=&quot;Access Your MLibrary Account&quot; class=&quot;leaf&quot;&gt;My Account&lt;/a&gt;
+  &lt;a href=&quot;/my-account/favorites&quot; title=&quot;Access Your MLibrary Favorites&quot; class=&quot;favorites-star&quot;&gt;Favorites&lt;/a&gt;
+  &lt;a href=&quot;/login?dest=/&quot; title=&quot;&quot; class=&quot;login-link&quot;&gt;Log in&lt;/a&gt;
+&lt;/div&gt;
+</code></div>

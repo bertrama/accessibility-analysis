@@ -1,0 +1,5 @@
+<div class="outline highlight-warning" style="margin-top: 0px; margin-left: 0px; width: 1px; height: 1px;"></div><div class="pointer" style="margin-left: 0px; width: 1px; height: 1rem;"></div><div class="message highlight-warning"><button class="btn btn-danger float-right" id="close" tabindex="0">Close</button><h3>Description</h3><p class="clearfix">If this element contains a navigation section, it is recommended that it be marked up as a list.</p><ul><li><a target="_blank" href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/1_3_1">Success Criteria: 1_3_1</a></li><li><a target="_blank" href="http://www.w3.org/TR/WCAG20-TECHS/H48">Technique H48</a></li></ul><h3>Code (the code may have been reformatted)</h3><code>&lt;p id=&quot;skip-link&quot; class=&quot;element-invisible&quot;&gt;
+  &lt;a href=&quot;#main-content&quot;&gt;Skip to page content&lt;/a&gt;
+  &lt;a href=&quot;#block-mlibrary-search-mlibrary-search&quot; id=&quot;mlibrary-skip-to-search-link&quot;&gt;Skip to search &amp;amp; move keyboard cursor to search field&lt;/a&gt;
+&lt;/p&gt;
+</code></div>

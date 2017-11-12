@@ -1,0 +1,15 @@
+<div class="outline highlight-warning" style="margin-top: 98px; margin-left: 450px; width: 266px; height: 16px;"></div><div class="pointer" style="margin-left: 450px; width: 266px; height: 1rem;"></div><div class="message highlight-warning"><button class="btn btn-danger float-right" id="close" tabindex="0">Close</button><h3>Description</h3><p class="clearfix">If this selection list contains groups of related options, they should be grouped with optgroup.</p><ul><li><a target="_blank" href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/1_3_1">Success Criteria: 1_3_1</a></li><li><a target="_blank" href="http://www.w3.org/TR/WCAG20-TECHS/H85">Technique H85</a></li></ul><h3>Code (the code may have been reformatted)</h3><code>&lt;select id=&quot;edit-mlibrary-browse-form-level-one&quot; name=&quot;mlibrary_browse_form_level_one&quot; class=&quot;form-select&quot;&gt;
+  &lt;option value=&quot;0&quot; class=&quot;p-0&quot;&gt;- Recommended Resources by Subject -&lt;/option&gt;
+  &lt;option value=&quot;3&quot; class=&quot;p-0&quot;&gt;Arts&lt;/option&gt;
+  &lt;option value=&quot;5&quot; class=&quot;p-0&quot;&gt;Business&lt;/option&gt;
+  &lt;option value=&quot;7&quot; class=&quot;p-0&quot;&gt;Engineering&lt;/option&gt;
+  &lt;option value=&quot;9&quot; class=&quot;p-0&quot;&gt;General Information Sources&lt;/option&gt;
+  &lt;option value=&quot;11&quot; class=&quot;p-0&quot;&gt;Government, Politics &amp;amp; Law&lt;/option&gt;
+  &lt;option value=&quot;13&quot; class=&quot;p-0&quot;&gt;Health Sciences&lt;/option&gt;
+  &lt;option value=&quot;21&quot; class=&quot;p-0&quot;&gt;Humanities&lt;/option&gt;
+  &lt;option value=&quot;23&quot; class=&quot;p-0&quot;&gt;International Studies&lt;/option&gt;
+  &lt;option value=&quot;15&quot; class=&quot;p-0&quot;&gt;News &amp;amp; Current Events&lt;/option&gt;
+  &lt;option value=&quot;17&quot; class=&quot;p-0&quot;&gt;Science&lt;/option&gt;
+  &lt;option value=&quot;19&quot; class=&quot;p-0&quot;&gt;Social Sciences&lt;/option&gt;
+&lt;/select&gt;
+</code></div>

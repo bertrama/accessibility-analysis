@@ -1,0 +1,12 @@
+<div class="outline highlight-danger" style="margin-top: 68px; margin-left: 243px; width: 194px; height: 22px;"></div><div class="pointer" style="margin-left: 243px; width: 194px; height: 1rem;"></div><div class="message highlight-danger"><button class="btn btn-danger float-right" id="close" tabindex="0">Close</button><h3>Description</h3><p class="clearfix">Fieldset does not contain a legend element. All fieldsets should contain a legend element that describes a description of the field group.</p><ul><li><a target="_blank" href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/1_3_1">Success Criteria: 1_3_1</a></li><li><a target="_blank" href="http://www.w3.org/TR/WCAG20-TECHS/H71">Technique H71</a></li></ul><h3>Code (the code may have been reformatted)</h3><code>&lt;fieldset class=&quot;mlibrary_search_tabs_form_wrapper&quot;&gt;
+  &lt;label for=&quot;edit-mlibrary-search-form-mlibrary&quot; class=&quot;mlibrary-search-form-tab-label mlibrary_search_form_active_tab&quot; id=&quot;mlibrary-search-form-tab-label-mlibrary&quot;&gt;MLibrary&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;mlibrary_search_form_tab&quot; checked=&quot;checked&quot; value=&quot;MLibrary&quot; id=&quot;edit-mlibrary-search-form-mlibrary&quot; class=&quot;form-submit element-invisible mlibrary_search_form_active_tab&quot;&gt;
+    &lt;label for=&quot;edit-mlibrary-search-form-articles-plus&quot; class=&quot;mlibrary-search-form-tab-label&quot;&gt;ArticlesPlus&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;mlibrary_search_form_tab&quot; value=&quot;ArticlesPlus&quot; id=&quot;edit-mlibrary-search-form-articles-plus&quot; class=&quot;form-submit element-invisible&quot;&gt;
+      &lt;label for=&quot;edit-mlibrary-search-form-catalog&quot; class=&quot;mlibrary-search-form-tab-label&quot;&gt;Catalog&lt;/label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;mlibrary_search_form_tab&quot; value=&quot;Catalog&quot; id=&quot;edit-mlibrary-search-form-catalog&quot; class=&quot;form-submit element-invisible&quot;&gt;
+    &lt;/input&gt;
+    &lt;/input&gt;
+  &lt;/input&gt;
+&lt;/fieldset&gt;
+</code></div>

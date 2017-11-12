@@ -1,0 +1,11 @@
+<div class="outline highlight-warning" style="margin-top: 14px; margin-left: 0px; width: 360px; height: 36px;"></div><div class="pointer" style="margin-left: 0px; width: 360px; height: 1rem;"></div><div class="message highlight-warning"><button class="btn btn-danger float-right" id="close" tabindex="0">Close</button><h3>Description</h3><p class="clearfix">If this element contains a navigation section, it is recommended that it be marked up as a list.</p><ul><li><a target="_blank" href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/1_3_1">Success Criteria: 1_3_1</a></li><li><a target="_blank" href="http://www.w3.org/TR/WCAG20-TECHS/H48">Technique H48</a></li></ul><h3>Code (the code may have been reformatted)</h3><code>&lt;div id=&quot;logo&quot;&gt;
+  &lt;a href=&quot;http://umich.edu/&quot; title=&quot;University of Michigan&quot; id=&quot;um-logo&quot;&gt;
+    &lt;img src=&quot;/sites/all/themes/mlibrary_zen/images/um_logo.png&quot; alt=&quot;U-M Home&quot;&gt;
+          &lt;/img&gt;
+    &lt;a href=&quot;/&quot; title=&quot;U-M Library&quot; rel=&quot;home&quot; id=&quot;lib-logo&quot;&gt;
+      &lt;img src=&quot;https://www.lib.umich.edu/sites/all/themes/mlibrary_zen/images/mlibrary_logo.png&quot; alt=&quot;Library Home&quot;&gt;
+          &lt;/img&gt;
+    &lt;/a&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+</code></div>
