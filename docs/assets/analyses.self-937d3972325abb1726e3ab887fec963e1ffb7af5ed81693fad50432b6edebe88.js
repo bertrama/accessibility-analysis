@@ -20,7 +20,7 @@ $(function() {
   $('button[data-id]').click(function(e){
     var highlight = $('#highlight');
     var reference = $('img').get(0);
-    highlight.html('').load('/messages/' + $(this).data('id'),
+    highlight.html('').load('../messages/' + $(this).data('id'),
       (function(reference) {
 
         function update_outline(scale_width, scale_height) {
