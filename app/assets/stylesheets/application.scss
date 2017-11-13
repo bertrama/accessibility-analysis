@@ -27,3 +27,12 @@ img {
 .message-list li {
   margin-bottom: 2rem;
 }
+
+.btn {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn + .btn {
+  margin-left: 1rem;
+}

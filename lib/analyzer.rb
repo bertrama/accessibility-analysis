@@ -99,7 +99,7 @@ class Analyzer
   end
 
   def get_body_size(driver)
-    rectangle = driver.execute_script("
+    driver.execute_script("
     var retval = document.body.getBoundingClientRect();
     retval.x = retval.left = 0;
     retval.y = retval.top = 0;
@@ -117,9 +117,8 @@ class Analyzer
         }
       }
     );
-    return retval;
-    ")
-    [rectangle['width'].to_f.ceil, rectangle['height'].to_f.ceil]
+    return [retval.width, retval.height];
+    ").map(&:to_i)
   end
 
   def wait(time = 30)
